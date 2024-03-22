@@ -7,7 +7,7 @@
 
 .drawing-board-segment {
   flex: 1;
-  background-color: red;
+  background-color: rgb(73, 73, 73);
   padding: 40px;
 
 }

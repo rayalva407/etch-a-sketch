@@ -8,3 +8,11 @@ function createDivs() {
 }
 
 createDivs()
+
+segments = document.querySelectorAll(".drawing-board-segment")
+
+segments.forEach(el => {
+  el.addEventListener("mouseover", (e) => {
+    el.style.background = "black"
+  })
+});
