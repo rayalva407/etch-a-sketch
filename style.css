@@ -1,0 +1,13 @@
+.drawing-board {
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.drawing-board-segment {
+  flex: 1;
+  background-color: red;
+  padding: 40px;
+
+}
