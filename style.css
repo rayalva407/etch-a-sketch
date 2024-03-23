@@ -13,8 +13,8 @@ form {
   padding: 15px;
 }
 
-p {
-  padding: 10px;
+form > * {
+  margin: 5px;
 }
 
 .drawing-board {
