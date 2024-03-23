@@ -7,11 +7,10 @@ form {
 }
 
 p {
-  padding: 5px;
+  padding: 10px;
 }
 
 .drawing-board {
-  background-color: blue;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
