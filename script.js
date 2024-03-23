@@ -8,15 +8,9 @@ function createDivs(num1, num2, color) {
     div.addEventListener("mouseover", (e) => {
       div.style.background = color
     })
-    const drawingBoard = document.querySelector('.drawing-board')
     drawingBoard.append(div)
   }
 }
-
-createDivs(16, 16, "black")
-
-
-
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -33,9 +27,10 @@ form.addEventListener("submit", (e) => {
   }
 
   createDivs(num1, num2, color)
-  
+
   field1.value = ""
   field2.value = ""
   field3.value = "#000000"
 })
 
+createDivs(16, 16, "black")
