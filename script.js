@@ -2,14 +2,19 @@ const drawingBoard = document.querySelector('.drawing-board')
 const form = document.querySelector(".form")
 let opacity = 0;
 
-function createDivs(num1, num2, color) {
-  for (let i = 0; i < (num1 * num2); i++) {
-    const div = document.createElement('div')
-    div.classList.add('drawing-board-segment')
-    div.addEventListener("mouseover", (e) => {
-      div.style.background = color
-    })
-    drawingBoard.append(div)
+function createDivs(num, color) {
+  for (let i = 0; i < num; i++) {
+    const boardRow = document.createElement("div")
+    boardRow.className = "boardRow"
+    drawingBoard.append(boardRow)
+    for (let j = 0; j < num; j++ ) {
+      const div = document.createElement('div')
+      div.classList.add('drawing-board-segment')
+      div.addEventListener("mouseover", (e) => {
+        div.style.background = color
+      })
+      boardRow.append(div)
+    }
   }
 }
 
@@ -19,42 +24,45 @@ function generateRandomColor() {
   return randomColor;
 }
 
-function createDivsWithRandomColor(num1, num2) {
-  for (let i = 0; i < (num1 * num2); i++) {
-    const div = document.createElement('div')
-    div.classList.add('drawing-board-segment')
-    div.addEventListener("mouseover", (e) => {
-      div.style.background = generateRandomColor();
-    })
-    drawingBoard.append(div)
+function createDivsWithRandomColor(num) {
+  for (let i = 0; i < num; i++) {
+    const boardRow = document.createElement("div")
+    boardRow.className = "boardRow"
+    drawingBoard.append(boardRow)
+    for (let j = 0; j < num; j++ ) {
+      const div = document.createElement('div')
+      div.classList.add('drawing-board-segment')
+      div.addEventListener("mouseover", (e) => {
+        div.style.background = generateRandomColor();
+      })
+      boardRow.append(div)
+    }
   }
 }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const field1 = document.querySelector(".num1")
-  const field2 = document.querySelector(".num2")
-  const field3 = document.querySelector("#color")
-  const field4 = document.querySelector(".random")
-  const field5 = document.querySelector(".opacity")
+  const field2 = document.querySelector("#color")
+  const field3 = document.querySelector(".random")
+  const field4 = document.querySelector(".opacity")
 
-  const num1 = Number(field1.value)
-  const num2 = Number(field2.value)
-  const color = field3.value
+  const num = Number(field1.value)
+  const color = field2.value
 
 
   while (drawingBoard.hasChildNodes()) {
     drawingBoard.removeChild(drawingBoard.lastChild)
   }
 
-  if (field4.checked) {
-    createDivsWithRandomColor(num1, num2)
+  if (field3.checked) {
+    createDivsWithRandomColor(num)
   }
   else {
-    createDivs(num1, num2, color)
+    createDivs(num, color)
   }
 
-  if (field5.checked) {
+  if (field4.checked) {
     const segments = document.querySelectorAll(".drawing-board-segment")
 
     segments.forEach((el) => {
@@ -66,11 +74,10 @@ form.addEventListener("submit", (e) => {
   }
 
   field1.value = ""
-  field2.value = ""
-  field3.value = "#000000"
+  field2.value = "#000000"
+  field3.checked = false;
   field4.checked = false;
-  field5.checked = false;
   opacity = 0;
 })
 
-createDivs(16, 16, "black")
+createDivs(16, "black")

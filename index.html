@@ -6,13 +6,11 @@
   </head>
 
   <body>
-    <h1>Etch-a-Sketch</h1>
+    <h1 class="title">Etch-a-Sketch</h1>
     <section class="form">
       <form action="#">
-        <p>Create a grid that is</p>
+        <p>Grid Size: </p>
         <input class="num1" name="num1" type="number" min="1" max="100" required>
-        <p>X</p>
-        <input class="num2" name="num2" type="number" min="1" max="100" required>
         <p>Choose Color: </p>
         <input type="color" name="color" id="color">
         <input type="checkbox" class="random" name="random" value="true">
@@ -23,6 +21,8 @@
         
       </form>
     </section>
-    <section class="drawing-board"></section>
+    <div class="boardWrapper">
+      <div class="drawing-board"></div>
+    </div>
   </body>
 </html>

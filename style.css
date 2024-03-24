@@ -1,8 +1,7 @@
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
 }
 
 form {
@@ -10,24 +9,39 @@ form {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 15px;
 }
 
 form > * {
   margin: 5px;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.boardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .drawing-board {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 60%;
-  height: 100%;
-  overflow: auto;
+  flex: auto;
+  flex-direction: column;
+  height: 90vh;
+  max-width: 90vh;
+}
+
+.boardRow {
+  display: flex;
+  flex: auto;
 }
 
 .drawing-board-segment {
-  flex: 1;
+  flex: auto;
   background-color: rgb(184, 184, 184);
-  padding: 10px;
 }
