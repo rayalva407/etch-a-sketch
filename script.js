@@ -70,6 +70,7 @@ form.addEventListener("submit", (e) => {
   field3.value = "#000000"
   field4.checked = false;
   field5.checked = false;
+  opacity = 0;
 })
 
 createDivs(16, 16, "black")
