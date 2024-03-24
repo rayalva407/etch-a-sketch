@@ -66,12 +66,7 @@ form.addEventListener("submit", (e) => {
     drawingBoard.removeChild(drawingBoard.lastChild)
   }
 
-  if (field3.checked) {
-    createBoardWithRandomColor(num)
-  }
-  else {
-    createBoard(num, color)
-  }
+  field3.checked ? createBoardWithRandomColor(num) : createBoard(num, color)
 
   if (field4.checked) {
     const segments = document.querySelectorAll(".drawing-board-segment")
