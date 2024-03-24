@@ -1,8 +1,10 @@
 const drawingBoard = document.querySelector('.drawing-board')
 const form = document.querySelector(".form")
+
+const clearBtn = document.querySelector(".clear-btn")
 let opacity = 0;
 
-function createDivs(num, color) {
+function createBoard(num, color) {
   for (let i = 0; i < num; i++) {
     const boardRow = document.createElement("div")
     boardRow.className = "boardRow"
@@ -24,7 +26,7 @@ function generateRandomColor() {
   return randomColor;
 }
 
-function createDivsWithRandomColor(num) {
+function createBoardWithRandomColor(num) {
   for (let i = 0; i < num; i++) {
     const boardRow = document.createElement("div")
     boardRow.className = "boardRow"
@@ -38,6 +40,16 @@ function createDivsWithRandomColor(num) {
       boardRow.append(div)
     }
   }
+}
+
+function clearDrawingBoard() {
+  const segments = document.querySelectorAll(".drawing-board-segment")
+
+  segments.forEach(el => { 
+    el.style.background = "#b8b8b8";
+    el.style.opacity = 1;
+    opacity = 0;
+  })
 }
 
 form.addEventListener("submit", (e) => {
@@ -56,15 +68,14 @@ form.addEventListener("submit", (e) => {
   }
 
   if (field3.checked) {
-    createDivsWithRandomColor(num)
+    createBoardWithRandomColor(num)
   }
   else {
-    createDivs(num, color)
+    createBoard(num, color)
   }
 
   if (field4.checked) {
     const segments = document.querySelectorAll(".drawing-board-segment")
-
     segments.forEach((el) => {
       el.addEventListener("mouseover", (e) => {
         el.style.opacity = opacity;
@@ -80,4 +91,6 @@ form.addEventListener("submit", (e) => {
   opacity = 0;
 })
 
-createDivs(16, "black")
+clearBtn.addEventListener("click", clearDrawingBoard)
+
+createBoard(16, "black")
