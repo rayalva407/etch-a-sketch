@@ -1,6 +1,5 @@
 const drawingBoard = document.querySelector('.drawing-board')
 const form = document.querySelector(".form")
-
 const clearBtn = document.querySelector(".clear-btn")
 let opacity = 0;
 
@@ -46,7 +45,7 @@ function clearDrawingBoard() {
   const segments = document.querySelectorAll(".drawing-board-segment")
 
   segments.forEach(el => { 
-    el.style.background = "#b8b8b8";
+    el.style.background = "#111227";
     el.style.opacity = 1;
     opacity = 0;
   })
@@ -54,7 +53,7 @@ function clearDrawingBoard() {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const field1 = document.querySelector(".num1")
+  const field1 = document.querySelector(".num")
   const field2 = document.querySelector("#color")
   const field3 = document.querySelector(".random")
   const field4 = document.querySelector(".opacity")

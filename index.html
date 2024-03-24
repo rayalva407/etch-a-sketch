@@ -9,15 +9,15 @@
     <h1 class="title">Etch-a-Sketch</h1>
     <section class="form">
       <form action="#">
-        <p>Grid Size: </p>
-        <input class="num1" name="num1" type="number" min="1" max="100" required>
-        <p>Choose Color: </p>
+        <label for="num">Grid Size:</label>
+        <input class="num" name="num" type="number" min="1" max="100" required>
+        <label for="color">Choose Color:</label>
         <input type="color" name="color" id="color">
         <input type="checkbox" class="random" name="random" value="true">
         <label for="random">Randomize Color</label>
         <input type="checkbox" class="opacity" name="opacity">
         <label for="opacity">Opacity Effect</label>
-        <input type="submit" value="Submit">
+        <input class="submit-btn" type="submit" value="Submit">
         <button class="clear-btn" type="button">Clear Board</button>
       </form>
     </section>

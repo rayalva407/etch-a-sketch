@@ -1,7 +1,13 @@
+html {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
 body {
   padding: 0;
   margin: 0;
   height: 100vh;
+  background-color: #111227;
+  color: #d1d5db
 }
 
 form {
@@ -11,8 +17,39 @@ form {
   align-items: center;
 }
 
-form > * {
-  margin: 5px;
+input {
+  margin: 10px 15px;
+  background-color: #d1d5db8f;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  transition: 0.4s;
+}
+
+input:hover {
+  background-color: #d1d5db;
+}
+
+input[type="number"],
+input[type="submit"] {
+  font-weight: bold;
+  padding: 4px;
+}
+
+
+
+button {
+  border: none;
+  border-radius: 7px;
+  padding: 4px;
+  background-color: #ff008088;
+  color: #d1d5db;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: #ff0080;
 }
 
 .title {
@@ -34,6 +71,8 @@ form > * {
   flex-direction: column;
   height: 90vh;
   max-width: 90vh;
+  border: 1px solid #d1d5db;
+  margin-top: 10px;
 }
 
 .boardRow {
@@ -43,5 +82,5 @@ form > * {
 
 .drawing-board-segment {
   flex: auto;
-  background-color: #b8b8b8;
+  background-color: #111227;
 }
