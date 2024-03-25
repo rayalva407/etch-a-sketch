@@ -69,7 +69,7 @@ button:hover {
   display: flex;
   flex: auto;
   flex-direction: column;
-  height: 90vh;
+  height: 80vh;
   max-width: 90vh;
   border: 1px solid #d1d5db;
   margin-top: 10px;
